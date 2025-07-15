@@ -1,17 +1,12 @@
 import './App.css'
-
+import LandingPage from './pages/landingPage'
 
 
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to Trygve</h1>
-      <p>Your journey starts here!</p>
-      {/* Other components and content can be added here */}
-    </div>
-    
+    <LandingPage></LandingPage>
   )
 }
 
