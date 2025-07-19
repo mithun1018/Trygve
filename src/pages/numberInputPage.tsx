@@ -58,7 +58,7 @@ function NumberInputPage() {
         </form>
         <div className="login-link">
           Already have an account?{' '}
-          <span className="link" onClick={() => navigate('/login')}>Log in</span>
+         <span className="link" onClick={() => navigate('/login-verification')}>Log in</span>
         </div>
       </div>
     </div>

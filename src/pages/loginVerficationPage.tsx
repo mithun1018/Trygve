@@ -7,17 +7,22 @@ function LoginVerificationPage() {
   const [phone, setPhone] = useState('');
   const navigate = useNavigate();
 
-  function handleContinue(e: React.FormEvent) {
-    e.preventDefault();
-    // Simple validation
-    if (!email || !phone) {
-      alert('Please enter both email and phone number');
-      return;
-    }
-    // Add your OTP logic here
-    alert(`OTP sent to ${email} and ${phone}`);
-    // Example: navigate('/otp-input');
+ function handleContinue(e: React.FormEvent) {
+  e.preventDefault();
+  if (!email || !phone) {
+    alert('Please enter both email and phone number');
+    return;
   }
+  // Check local storage for email and phone
+  const storedEmail = localStorage.getItem('signup_email');
+  const storedPhone = localStorage.getItem('signup_secondaryPhone');
+  if (email === storedEmail && phone === storedPhone) {
+    alert('Email and phone number verified!');
+    navigate('/login-otp'); // <-- Add here
+  } else {
+    alert('Email or phone number not found. Please check your details.');
+  }
+}
 
   return (
     <div className="login-bg">

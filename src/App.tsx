@@ -6,6 +6,8 @@ import LoginVerificationPage from './pages/loginVerficationPage';
 import SignUpOtp from './pages/signUpOtp'; 
 import SignUpDetails from './pages/signUpDetails';
 import SignupSuccess from './pages/signupSuccess';
+import LoginOtp from './pages/loginOtp';
+import LoginSuccess from './pages/loginSuccess';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/sign-up-otp" element={<SignUpOtp />} />
         <Route path="/sign-up-details" element={<SignUpDetails />} />
         <Route path="/signup-success" element={<SignupSuccess />} />
+        <Route path="/login-otp" element={<LoginOtp />} />
+        <Route path="/login-success" element={<LoginSuccess />} />
       </Routes>
     </BrowserRouter>
   );
