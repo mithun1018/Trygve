@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.welcome-bg {
+  min-height: 100vh;
+  background: #f7f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-container {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-title {
+  font-family: 'Audiowide', Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #222;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+
+.welcome-logo {
+  position: relative;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trygve-logo {
+  font-family: 'Audiowide', Arial, sans-serif;
+  font-size: 2.7rem;
+  color: #2563eb;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+
+.logo-bg {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  background: url('/assets/caduceus.png') center center/contain no-repeat;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.welcome-tagline {
+  color: #444;
+  font-size: 0.98rem;
+  text-align: center;
+  margin-bottom: 2.2rem;
+  margin-top: 0.5rem;
+  opacity: 0.85;
+  line-height: 1.3;
+}
+
+.welcome-btn {
+  width: 100%;
+  border-radius: 2rem;
+  font-size: 1.08rem;
+  padding: 0.7rem 0;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+  border: 2px solid transparent;
+}
+
+.welcome-btn.primary {
+  background: #2563eb;
+  color: #fff;
+  border: 2px solid #2563eb;
+}
+
+.welcome-btn.primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.welcome-btn.secondary {
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  margin-bottom: 0;
+}
+
+.welcome-btn.secondary:hover {
+  background: #f0f6ff;
+  color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Tablet responsiveness */
+@media (max-width: 900px) {
+  .welcome-container {
+    max-width: 98vw;
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  .trygve-logo {
+    font-size: 2.2rem;
+  }
+  .logo-bg {
+    width: 70px;
+    height: 70px;
+    top: 8px;
+  }
+  .welcome-title {
+    font-size: 1.1rem;
+  }
+  .welcome-tagline {
+    font-size: 0.93rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .welcome-bg {
+    padding: 0.5rem 0;
+  }
+  .welcome-container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 99vw;
+  }
+  .trygve-logo {
+    font-size: 1.3rem;
+  }
+  .logo-bg {
+    width: 48px;
+    height: 48px;
+    top: 4px;
+  }
+  .welcome-title {
+    font-size: 1rem;
+  }
+  .welcome-tagline {
+    font-size: 0.85rem;
+    margin-bottom: 1.2rem;
+  }
+  .welcome-btn {
+    font-size: 0.98rem;
+    padding: 0.6rem 0;
+  }
+}
+.welcome-bg {
+  min-height: 100vh;
+  background: url('/assets/5.png') center center/cover no-repeat, #f7f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Needed for pseudo-element */
+  overflow: hidden;
+}
+
+.welcome-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(235, 236, 238, 0.85); /* Adjust the alpha for less transparency */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Make sure the container is above the overlay */
+.welcome-container {
+  background: rgba(245, 243, 243, 0); /* More opaque white */
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}

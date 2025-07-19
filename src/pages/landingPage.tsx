@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import '../styles/landingPage.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const pages = [
@@ -62,6 +63,7 @@ const pages = [
 
 
 function LandingPage() {
+  const navigate = useNavigate();
   const pageRef = useRef<HTMLDivElement>(null);
   const currentPage = useRef(0);
   const [, setDummy] = React.useState({});
@@ -103,9 +105,11 @@ function LandingPage() {
     goToPage(pages.length - 1);
   }
 
-  function handleGetStarted() {
-    alert('Get Started clicked!');
-  }
+  
+    function handleGetStarted() {
+  navigate('/welcome');
+}
+  
 
   const page = pages[currentPage.current];
 
