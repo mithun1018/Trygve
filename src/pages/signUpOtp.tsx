@@ -52,11 +52,10 @@ function SignUpOtp() {
     e.preventDefault();
     const entered = otp.join('');
     if (entered === sentOtp) {
-      alert('OTP Verified!');
-      // Redirect to next page or dashboard
-      // navigate('/dashboard');
+  alert('OTP Verified!');
+  navigate('/sign-up-details'); // Redirect to details page
     } else {
-      setError('Invalid OTP. Please try again.');
+    setError('Invalid OTP. Please try again.');
     }
   }
 
