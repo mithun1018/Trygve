@@ -15,12 +15,16 @@ function handleSubmit(e: React.FormEvent) {
     alert('Please fill all required fields');
     return;
   }
-  localStorage.setItem('signup_fullName', fullName);
-  localStorage.setItem('signup_email', email);
-  localStorage.setItem('signup_location', location);
-  localStorage.setItem('signup_secondaryPhone', secondaryPhone);
+  // Store all details as an object
+  const signupDetails = {
+    fullName,
+    email,
+    location,
+    secondaryPhone,
+  };
+  localStorage.setItem('signup_details', JSON.stringify(signupDetails));
   alert('Account Created!');
-  navigate('/signup-success'); // <-- Add this line
+  navigate('/signup-success');
 }
 
   return (

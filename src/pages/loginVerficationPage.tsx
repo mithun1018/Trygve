@@ -7,6 +7,7 @@ function LoginVerificationPage() {
   const [phone, setPhone] = useState('');
   const navigate = useNavigate();
 
+<<<<<<< Updated upstream
   function handleContinue(e: React.FormEvent) {
     e.preventDefault();
     // Simple validation
@@ -18,6 +19,28 @@ function LoginVerificationPage() {
     alert(`OTP sent to ${email} and ${phone}`);
     // Example: navigate('/otp-input');
   }
+=======
+function handleContinue(e: React.FormEvent) {
+  e.preventDefault();
+  if (!email || !phone) {
+    alert('Please enter both email and phone number');
+    return;
+  }
+  // Get details object from localStorage
+  const storedDetails = localStorage.getItem('signup_details');
+  if (storedDetails) {
+    const { email: storedEmail, secondaryPhone: storedPhone } = JSON.parse(storedDetails);
+    if (email === storedEmail && phone === storedPhone) {
+      alert('Email and phone number verified!');
+      navigate('/login-otp');
+    } else {
+      alert('Email or phone number not found. Please check your details.');
+    }
+  } else {
+    alert('No signup details found. Please sign up first.');
+  }
+}
+>>>>>>> Stashed changes
 
   return (
     <div className="login-bg">
